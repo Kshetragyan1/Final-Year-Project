@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Update College Student{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Update College Student</h2>
+      <form method="post" action="{% url 'college_student_update' student.pk %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+    <a href="{% url 'college_student_detail' pk=student.pk %}" class="btn btn-secondary">Back to College Student Detail</a>
+{% endblock %}

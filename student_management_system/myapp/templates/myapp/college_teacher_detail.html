@@ -1,0 +1,36 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}College Teacher Detail{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h2>College Teacher Detail</h2>
+      <dl class="row">
+        <dt class="col-sm-3">ID:</dt>
+        <dd class="col-sm-9">{{ teacher.college_teacher_id }}</dd>
+
+        <dt class="col-sm-3">Full Name:</dt>
+        <dd class="col-sm-9">{{ teacher.full_name }}</dd>
+
+        <dt class="col-sm-3">Education Degree:</dt>
+        <dd class="col-sm-9">{{ teacher.education_degree }}</dd>
+
+        <dt class="col-sm-3">Address:</dt>
+        <dd class="col-sm-9">{{ teacher.address }}</dd>
+
+        <dt class="col-sm-3">Email:</dt>
+        <dd class="col-sm-9">{{ teacher.email }}</dd>
+
+        <dt class="col-sm-3">Mobile Number:</dt>
+        <dd class="col-sm-9">{{ teacher.mobile_number }}</dd>
+
+
+      </dl>
+    </div>
+  </div>
+  <a href="{% url 'college_teacher_list' %}" class="btn btn-secondary">Back to List</a>
+  <a href="{% url 'college_teacher_update' teacher.id %}" class="btn btn-primary">Update College Teacher</a>
+  <a href="{% url 'college_teacher_delete' teacher.id %}" class="btn btn-danger">Delete College Teacher</a>
+{% endblock %}
+

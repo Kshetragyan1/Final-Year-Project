@@ -1,0 +1,36 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}School Student Detail{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h2>School Student Detail</h2>
+      <dl class="row">
+        <dt class="col-sm-3">Roll Number:</dt>
+        <dd class="col-sm-9">{{ student.school_student_roll_number }}</dd>
+
+        <dt class="col-sm-3">Registration Number:</dt>
+        <dd class="col-sm-9">{{ student.school_student_registration_number }}</dd>
+
+        <dt class="col-sm-3">Full Name:</dt>
+        <dd class="col-sm-9">{{ student.full_name }}</dd>
+
+        <dt class="col-sm-3">Father Name:</dt>
+        <dd class="col-sm-9">{{ student.father_name }}</dd>
+
+        <dt class="col-sm-3">Address:</dt>
+        <dd class="col-sm-9">{{ student.address }}</dd>
+
+        <dt class="col-sm-3">Email:</dt>
+        <dd class="col-sm-9">{{ student.email }}</dd>
+
+        <dt class="col-sm-3">Mobile Number:</dt>
+        <dd class="col-sm-9">{{ student.mobile_number }}</dd>
+      </dl>
+    </div>
+  </div>
+  <a href="{% url 'school_student_list' %}" class="btn btn-secondary">Back to List</a>
+  <a href="{% url 'school_student_update' pk=student.pk %}" class="btn btn-primary">Update School Student</a>
+  <a href="{% url 'school_student_delete' pk=student.pk %}" class="btn btn-danger">Delete School Student</a>
+{% endblock %}

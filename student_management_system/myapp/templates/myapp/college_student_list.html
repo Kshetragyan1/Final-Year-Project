@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}College Student List{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-6">
+      <h2>College Student List</h2>
+      <ul>
+        {% for student in students %}
+            <li class="list-group-item"><a href="{% url 'college_student_detail' student.pk %}">{{ student.full_name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <a href="{% url 'create_college_student' %}" class="btn btn-primary">Create College Student</a>
+{% endblock %}

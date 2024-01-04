@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Homepage</h2>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">List</h5>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="{% url 'school_teacher_list' %}">School Teachers</a></li>
+            <li class="list-group-item"><a href="{% url 'college_teacher_list' %}">College Teachers</a></li>
+            <li class="list-group-item"><a href="{% url 'both_teacher_list' %}">Both Teachers</a></li>
+            <li class="list-group-item"><a href="{% url 'school_student_list' %}">School Students</a></li>
+            <li class="list-group-item"><a href="{% url 'college_student_list' %}">College Students</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
